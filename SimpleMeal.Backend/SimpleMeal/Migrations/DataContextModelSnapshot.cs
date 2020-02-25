@@ -72,6 +72,33 @@ namespace SimpleMeal.Migrations
                     b.ToTable("Products");
                 });
 
+<<<<<<< HEAD
+=======
+            modelBuilder.Entity("SimpleMeal.Models.Table", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<bool>("IsAvaliable")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tables");
+                });
+
+>>>>>>> feature/begin_api
             modelBuilder.Entity("SimpleMeal.Models.Product", b =>
                 {
                     b.HasOne("SimpleMeal.Models.Order", null)

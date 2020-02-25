@@ -1,5 +1,9 @@
 {
   "version": 1,
+<<<<<<< HEAD
   "dgSpecHash": "xrlc01pyc/eELHgBqSkmZgT2iBWc0lMRxlip+g7GBFQN81WyPOb5Yt6A2hyWX7r4u/OrvxV/j3smAVYZylWSQA==",
+=======
+  "dgSpecHash": "TzI15EHdI5aY4Pnegn7n2Ixhu+XGdVz7Q6eUWR4OmivpE1vfzu9N36SYIzV/t+P2gD6MnwB/gB0NaM4Y+7XqQw==",
+>>>>>>> feature/begin_api
   "success": true
 }
