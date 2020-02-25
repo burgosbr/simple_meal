@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\SimpleMeal\\SimpleMeal\\SimpleMeal.csproj": {}
+    "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\simple_meal\\SimpleMeal.Backend\\SimpleMeal\\SimpleMeal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\SimpleMeal\\SimpleMeal\\SimpleMeal.csproj": {
+    "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\simple_meal\\SimpleMeal.Backend\\SimpleMeal\\SimpleMeal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\SimpleMeal\\SimpleMeal\\SimpleMeal.csproj",
+        "projectUniqueName": "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\simple_meal\\SimpleMeal.Backend\\SimpleMeal\\SimpleMeal.csproj",
         "projectName": "SimpleMeal",
-        "projectPath": "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\SimpleMeal\\SimpleMeal\\SimpleMeal.csproj",
+        "projectPath": "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\simple_meal\\SimpleMeal.Backend\\SimpleMeal\\SimpleMeal.csproj",
         "packagesPath": "C:\\Users\\Joelyson David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\SimpleMeal\\SimpleMeal\\obj\\",
+        "outputPath": "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\simple_meal\\SimpleMeal.Backend\\SimpleMeal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -54,6 +54,20 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             }
           },
           "imports": [

@@ -19,7 +19,6 @@ namespace SimpleMeal.Controllers
     }
 
     [HttpGet]
-    [Route("")]
     public async Task<ActionResult<List<Product>>> Get()
     {
       var products = await _context.Products.ToListAsync();
@@ -27,7 +26,6 @@ namespace SimpleMeal.Controllers
     }
 
     [HttpPost]
-    [Route("")]
     public async Task<ActionResult<Product>> Post([FromBody] Product model)
     {
       if (ModelState.IsValid)
