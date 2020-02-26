@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SimpleMeal.Models
 {
-    public class Reservas
+    public class Reservation
     {
     }
 }
