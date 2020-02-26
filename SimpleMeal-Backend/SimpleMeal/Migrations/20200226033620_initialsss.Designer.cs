@@ -10,8 +10,8 @@ using SimpleMeal.Data;
 namespace SimpleMeal.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200226032359_initial")]
-    partial class initial
+    [Migration("20200226033620_initialsss")]
+    partial class initialsss
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,9 +27,6 @@ namespace SimpleMeal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
