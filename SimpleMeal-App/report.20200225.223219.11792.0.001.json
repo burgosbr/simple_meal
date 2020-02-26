@@ -1,0 +1,145 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200225.223219.11792.0.001.json",
+    "dumpEventTime": "2020-02-25T22:32:19Z",
+    "dumpEventTimeStamp": "1582680739929",
+    "processId": 11792,
+    "cwd": "C:\\Users\\Joelyson David\\Documents\\Works\\TCC\\simple_meal\\SimpleMeal-App",
+    "commandLine": [
+      "node",
+      "C:\\Users\\Joelyson David\\AppData\\Roaming\\npm\\\\node_modules\\@angular\\cli\\bin\\ng",
+      "serve"
+    ],
+    "nodejsVersion": "v12.14.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.17763",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+        "speed": 3000,
+        "user": 884203,
+        "nice": 0,
+        "sys": 777437,
+        "idle": 3335078,
+        "irq": 101812
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+        "speed": 3000,
+        "user": 938406,
+        "nice": 0,
+        "sys": 604125,
+        "idle": 3453906,
+        "irq": 14765
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+        "speed": 3000,
+        "user": 1051031,
+        "nice": 0,
+        "sys": 627406,
+        "idle": 3318000,
+        "irq": 8375
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+        "speed": 3000,
+        "user": 1097031,
+        "nice": 0,
+        "sys": 643281,
+        "idle": 3256125,
+        "irq": 7765
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "vEthernet (DockerNAT)",
+        "internal": false,
+        "mac": "00:15:5d:9d:b1:04",
+        "address": "fe80::1878:d1b0:6cf7:b3fa",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 26
+      },
+      {
+        "name": "vEthernet (DockerNAT)",
+        "internal": false,
+        "mac": "00:15:5d:9d:b1:04",
+        "address": "10.0.75.1",
+        "netmask": "255.255.255.240",
+        "family": "IPv4"
+      },
+      {
+        "name": "VirtualBox Host-Only Network #2",
+        "internal": false,
+        "mac": "0a:00:27:00:00:0f",
+        "address": "fe80::b884:5147:9b1e:38f0",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 15
+      },
+      {
+        "name": "VirtualBox Host-Only Network #2",
+        "internal": false,
+        "mac": "0a:00:27:00:00:0f",
+        "address": "192.168.24.1",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "VirtualBox Host-Only Network",
+        "internal": false,
+        "mac": "0a:00:27:00:00:18",
+        "address": "fe80::edfe:8d8c:11a6:6030",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 24
+      },
+      {
+        "name": "VirtualBox Host-Only Network",
+        "internal": false,
+        "mac": "0a:00:27:00:00:18",
+        "address": "192.168.56.1",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "10:7b:44:3a:1c:83",
+        "address": "2804:431:f704:a401:16c:92a6:71a1:521e",
+        "netmask": "ffff:ffff:ffff:ffff::"
