@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SimpleMeal.Data;
-using SimpleMeal.Models;
+using SimpleMeal.Repository;
+using SimpleMeal.Domain;
 
 namespace SimpleMeal.Controllers
 {
@@ -11,9 +11,9 @@ namespace SimpleMeal.Controllers
   [Route("/products")]
   public class ProductController : ControllerBase
   {
-    public readonly DataContext _context;
+    public readonly SimpleMealContext _context;
 
-    public ProductController(DataContext context)
+    public ProductController(SimpleMealContext context)
     {
       _context = context;
     }

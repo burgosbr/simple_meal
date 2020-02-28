@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SimpleMeal.Data;
-using SimpleMeal.Models;
+using SimpleMeal.Repository;
+using SimpleMeal.Domain;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,9 +13,9 @@ namespace SimpleMeal.Controllers
     [Route("/tables")]
     public class TableController: ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly SimpleMealContext _context;
 
-        public TableController(DataContext context) 
+        public TableController(SimpleMealContext context) 
         {
             _context = context;
         }

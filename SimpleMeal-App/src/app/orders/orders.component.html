@@ -1,28 +1,88 @@
-<form class="form-inline">
+<div class="form-inline">
   <div class="form-group mb-2">
-    <input type="text" class="form-control mr-2" placeholder="Buscar">
-    <button class="btn btn-outline-success">Buscar</button>
+    Filtro: <input type="text" class="form-control mr-2" placeholder="Bucar"
+    [(ngModel)]="filterList">
+    <button class="btn btn-outline-primary">Buscar</button>
   </div>
-</form>
-<table class="table table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th>#</th>
-      <th>Status</th>
-      <th>Nº Mesa</th>
-      <th>Cliente</th>
-      <th>Data</th>
-      <th>R$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of orders">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+</div>
+<h3 class="form-inline">Filtro: {{filterList}}</h3>
+<hr>
+<div class="row">
+  <div class="col-xl-3 col-md-6" *ngFor="let order of ordersFilter">
+    <div class="card bg-info text-white mb-4" *ngIf="order.status == 'Em andamento'">
+      <h6 class="title mr-2">{{order.id}}</h6>
+      <div class="card-body">
+        <h5>Mesa Nº {{order.tableId}}</h5>
+        <h6>{{order.clientName}}</h6>
+      </div>
+      <div class="text-dark col-6">
+        <span class="badge badge-dark">Em andamento</span>
+      </div>
+      <div class="card-footer d-flex align-items-center">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            class="card bg-warning">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Detalhes do pedido
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div>
+              <mat-panel-description>Items</mat-panel-description>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div class="card bg-danger text-white mb-4" *ngIf="order.status == 'Cancelado'">
+      <h6 class="title" style="text-align: left;">{{order.id}}</h6>
+      <div class="card-body">
+        <h5>Mesa Nº {{order.tableId}}</h5>
+        <h6>{{order.clientName}}</h6>
+      </div>
+      <div class="text-dark col-6">
+        <span class="badge badge-dark">Cancelado</span>
+      </div>
+      <div class="card-footer d-flex align-items-center justify-content-between">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            class="card bg-warning">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Detalhes do pedido
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div>
+              <mat-panel-description>Items</mat-panel-description>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div class="card bg-success text-white mb-4" *ngIf="order.status == 'Entregue'">
+      <h6 class="title" style="text-align: left;">{{order.id}}</h6>
+      <div class="card-body">
+        <h5>Mesa Nº {{order.tableId}}</h5>
+        <h6>{{order.clientName}}</h6>
+      </div>
+      <div class="text-dark col-6">
+        <span class="badge badge-dark">Pedido entregue</span>
+      </div>
+      <div class="card-footer d-flex align-items-center justify-content-between">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            class="card bg-warning">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Detalhes do pedido
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div>
+              <mat-panel-description>Items</mat-panel-description>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</div>

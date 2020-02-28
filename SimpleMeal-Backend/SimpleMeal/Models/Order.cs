@@ -10,7 +10,7 @@ namespace SimpleMeal.Models
     public int Id { get; set; }
 
     [Required(ErrorMessage = "Este campo é obrigatório")]
-    /*public Table Table { get; set; }
+    public Table Table { get; set; }
 
     [Required(ErrorMessage = "Este campo é obrigatório")]
     public int TableId { get; set; }
@@ -25,7 +25,7 @@ namespace SimpleMeal.Models
     public DateTime Date { get; set; }
 
     [Required(ErrorMessage = "Este campo é obrigatório")]
-    public string Status { get; set; }*/
+    public string Status { get; set; }
     public IList<Product> Products { get; set; }
   }
 }
