@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SimpleMeal.Data;
+using SimpleMeal.Repository;
+using SimpleMeal.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SimpleMeal.Controllers
@@ -13,9 +12,9 @@ namespace SimpleMeal.Controllers
     [Route("/orders")]
     public class OrderController: ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly SimpleMealContext _context;
 
-        public OrderController(DataContext context)
+        public OrderController(SimpleMealContext context)
         {
             _context = context;
         }
@@ -31,6 +30,21 @@ namespace SimpleMeal.Controllers
             catch (Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro na requisição!");
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Order>> Post([FromBody] Order model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Orders.Add(model);
+                await _context.SaveChangesAsync();
+                return model;
+            }
+            else
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha na requisição!");
             }
         }
     }
