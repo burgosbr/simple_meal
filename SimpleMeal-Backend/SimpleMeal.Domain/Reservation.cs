@@ -14,5 +14,6 @@ namespace SimpleMeal.Domain
         public int CountPeople { get; set; }
         public int TableId { get; set; }
         public Table Table { get; set; }
+        public Boolean IsFinished { get; set; }
     }
 }

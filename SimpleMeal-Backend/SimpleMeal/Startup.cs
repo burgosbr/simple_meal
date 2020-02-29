@@ -21,7 +21,7 @@ namespace SimpleMeal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<SimpleMealContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<SimpleMealContext, SimpleMealContext>();
+            services.AddScoped<ISimpleMealRepository, SimpleMealRepository>();
             services.AddControllers();
             services.AddCors();
         }

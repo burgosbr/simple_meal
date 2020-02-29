@@ -10,7 +10,7 @@ using SimpleMeal.Repository;
 namespace SimpleMeal.Repository.Migrations
 {
     [DbContext(typeof(SimpleMealContext))]
-    [Migration("20200228030120_init")]
+    [Migration("20200228195724_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,6 +67,9 @@ namespace SimpleMeal.Repository.Migrations
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("OrderId", "ProductId");
 
                     b.HasIndex("ProductId");
@@ -120,6 +123,9 @@ namespace SimpleMeal.Repository.Migrations
                     b.Property<int>("CountPeople")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsFinished")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("ScheduleDate")
                         .HasColumnType("datetime2");
 
@@ -161,8 +167,8 @@ namespace SimpleMeal.Repository.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AccessType")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("AccessType")
+                        .HasColumnType("int");
 
                     b.Property<string>("CPF")
                         .HasColumnType("nvarchar(max)");

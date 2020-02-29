@@ -50,7 +50,7 @@ namespace SimpleMeal.Repository.Migrations
                     CPF = table.Column<string>(nullable: true),
                     Login = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
-                    AccessType = table.Column<string>(nullable: true)
+                    AccessType = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -91,7 +91,8 @@ namespace SimpleMeal.Repository.Migrations
                     ClientCpf = table.Column<string>(nullable: true),
                     ScheduleDate = table.Column<DateTime>(nullable: false),
                     CountPeople = table.Column<int>(nullable: false),
-                    TableId = table.Column<int>(nullable: false)
+                    TableId = table.Column<int>(nullable: false),
+                    IsFinished = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -111,7 +112,8 @@ namespace SimpleMeal.Repository.Migrations
                     OrderId = table.Column<int>(nullable: false),
                     ProductId = table.Column<int>(nullable: false),
                     Amount = table.Column<int>(nullable: false),
-                    Cost = table.Column<decimal>(nullable: false)
+                    Cost = table.Column<decimal>(nullable: false),
+                    Status = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

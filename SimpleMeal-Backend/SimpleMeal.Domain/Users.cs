@@ -13,6 +13,6 @@ namespace SimpleMeal.Domain
         public string CPF { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public string AccessType { get; set; }
+        public Role AccessType { get; set; }
     }
 }
