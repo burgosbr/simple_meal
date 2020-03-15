@@ -4,40 +4,52 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SimpleMeal.Repository;
 using SimpleMeal.Domain;
+using System;
+using Microsoft.AspNetCore.Http;
 
 namespace SimpleMeal.Controllers
 {
-  [ApiController]
-  [Route("/products")]
-  public class ProductController : ControllerBase
-  {
-    public readonly SimpleMealContext _context;
-
-    public ProductController(SimpleMealContext context)
+    [ApiController]
+    [Route("api/products")]
+    public class ProductController : ControllerBase
     {
-      _context = context;
-    }
+        public readonly ISimpleMealRepository _repo;
 
-    [HttpGet]
-    public async Task<ActionResult<List<Product>>> Get()
-    {
-      var products = await _context.Products.ToListAsync();
-      return products;
-    }
+        public ProductController(ISimpleMealRepository repo)
+        {
+            _repo = repo;
+        }
 
-    [HttpPost]
-    public async Task<ActionResult<Product>> Post([FromBody] Product model)
-    {
-      if (ModelState.IsValid)
-      {
-        _context.Products.Add(model);
-        await _context.SaveChangesAsync();
-        return model;
-      }
-      else
-      {
-        return BadRequest(ModelState);
-      }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var results = await _repo.GetAllProductsAsync();
+                return Ok(results);
+            } catch(Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro na requisição!");
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Product>> Post([FromBody] Product model)
+        {
+            try
+            {
+                _repo.Add(model);
+                if (await _repo.SaveChangesAsync())
+                {
+                    return Created($"/api/products/{model.Id}", model);
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro na requisição!");
+            }
+
+            return BadRequest();
+        }
     }
-  }
 }

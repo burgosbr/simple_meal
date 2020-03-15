@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace SimpleMeal.Controllers
 {
     [ApiController]
-    [Route("/tables")]
+    [Route("api/tables")]
     public class TableController: ControllerBase
     {
         private readonly SimpleMealContext _context;

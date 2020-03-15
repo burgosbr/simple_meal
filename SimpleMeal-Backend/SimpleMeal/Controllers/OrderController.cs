@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SimpleMeal.Repository;
 using SimpleMeal.Domain;
 using System;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 namespace SimpleMeal.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/orders")]
     public class OrderController : ControllerBase
     {
         private readonly ISimpleMealRepository _repo;
@@ -79,7 +78,7 @@ namespace SimpleMeal.Controllers
                 _repo.Add(model);
                 if (await _repo.SaveChangesAsync())
                 {
-                    return Created($"/api/order/{model.Id}", model);
+                    return Created($"/api/orders/{model.Id}", model);
                 }
             }
             catch (Exception)
@@ -100,7 +99,7 @@ namespace SimpleMeal.Controllers
                 _repo.Update(model);
                 if (await _repo.SaveChangesAsync())
                 {
-                    return Created($"/api/order/{model.Id}", model);
+                    return Created($"/api/orders/{model.Id}", model);
                 }
 
             }

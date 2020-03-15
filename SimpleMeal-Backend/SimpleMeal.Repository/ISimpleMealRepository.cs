@@ -32,5 +32,20 @@ namespace SimpleMeal.Repository
         Task<OrderProduct[]> GetAllOrderProductsAsyncByOrder(int orderId);
         Task<OrderProduct[]> GetAllOrderProductsAsyncByProduct(int productId);
         Task<OrderProduct[]> GetOrderProductsAsyncByStatus(string status);
+
+        // Produtos
+        Task<Product[]> GetAllProductsAsync();
+        Task<Product[]> GetProductAsyncByName(string name);
+        Task<Product> GetProductAsyncById(int id);
+        Task<Product[]> GetAllProductsAsyncByDescrption(string description);
+        Task<Product[]> GetAllProductsByStatus(bool status);
+
+        // Mesas
+        Task<Table[]> GetAllTablesAsync();
+        Task<Table> GetTableByNumber(string number);
+        Task<Table[]> GetTableByDescription(string description);
+        Task<Table> GetTableById(int id);
+        Task<Table[]> GetAllTablesByStatus(bool status);
+
     }
 }

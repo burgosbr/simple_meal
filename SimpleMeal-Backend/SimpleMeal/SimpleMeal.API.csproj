@@ -18,7 +18,4 @@
     <ProjectReference Include="..\SimpleMeal.Domain\SimpleMeal.Domain.csproj" />
     <ProjectReference Include="..\SimpleMeal.Repository\SimpleMeal.Repository.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
 </Project>

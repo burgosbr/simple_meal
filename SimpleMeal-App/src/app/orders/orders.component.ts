@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { error } from 'util';
+import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
@@ -23,6 +25,7 @@ export class OrdersComponent implements OnInit {
   ordersFilter: any = [];
 
   orders: any = [];
+  ordersProducts: any = [];
   filtroLista = '';
   isMenuCollapsed = true;
   panelOpenState = false;
@@ -34,17 +37,28 @@ export class OrdersComponent implements OnInit {
   }
 
   filterOrders(filterTo: string): any {
-      filterTo = filterTo.toLocaleLowerCase();
-      return this.orders.filter(
-        order => order.clientName.toLocaleLowerCase().concat(
-          order.date).indexOf(filterTo) !== -1);
+    filterTo = filterTo.toLocaleLowerCase();
+    return this.orders.filter(
+      order => order.clientName.toLocaleLowerCase().concat(
+        order.date).indexOf(filterTo) !== -1);
   }
 
   getOrders() {
-    this.orders = this.http.get('http://localhost:5000/orders').subscribe(
+    this.orders = this.http.get('http://localhost:5000/api/orders').subscribe(
       response => { this.orders = response; },
       error => { console.log(error); }
     );
   }
 
+  // api dos itens de pedidos
+  getProductsOrders(orderId: number) {
+    this.ordersProducts = [];
+    this.ordersProducts = this.http.get(`http://localhost:5000/api/orderproducts/${orderId}`).subscribe(
+      response => {
+        this.ordersProducts = response;
+        console.log(response);
+      },
+      error => { console.log(error); }
+    );
+  }
 }
