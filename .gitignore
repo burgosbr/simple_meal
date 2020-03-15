@@ -5,6 +5,7 @@
 /.vscode
 .vs
 /.vs
+Migrations
 obj
 bin
 
