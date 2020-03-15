@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { error } from 'util';
 import { ThrowStmt } from '@angular/compiler';
 
-
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
