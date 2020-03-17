@@ -64,10 +64,9 @@ namespace SimpleMeal.Repository.Migrations
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
-
+                        
                     b.HasKey("OrderId", "ProductId");
 
                     b.HasIndex("ProductId");
