@@ -9,7 +9,6 @@ import { TablesComponent } from './tables/tables.component';
 import { NavComponent } from './nav/nav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { OrdersComponent } from './orders/orders.component';
-import { OrderCardComponent } from './order-card/order-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 
@@ -19,8 +18,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
       TablesComponent,
       NavComponent,
       SidebarComponent,
-      OrdersComponent,
-      OrderCardComponent
+      OrdersComponent
    ],
    imports: [
       BrowserModule,
