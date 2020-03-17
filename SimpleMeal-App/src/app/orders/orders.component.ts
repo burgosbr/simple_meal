@@ -44,16 +44,15 @@ export class OrdersComponent implements OnInit {
   }
 
   getOrders() {
-    this.orders = this.http.get('http://localhost:5000/api/orders').subscribe(
+    this.http.get('http://localhost:5000/api/orders').subscribe(
       response => { this.orders = response; },
-      error => { console.log(error); }
+      error => { console.error(error); }
     );
   }
 
   // api dos itens de pedidos
   getProductsOrders(orderId: number) {
-    this.ordersProducts = [];
-    this.ordersProducts = this.http.get(`http://localhost:5000/api/orderproducts/${orderId}`).subscribe(
+    this.http.get(`http://localhost:5000/api/orderproducts/${orderId}`).subscribe(
       response => {
         this.ordersProducts = response;
         console.log(response);
